@@ -34,6 +34,7 @@ public class SelectBusFragment extends Fragment {
     Button btnbooking;
     ImageView btnBack;
 
+    private String routeid;
     private String date;
     private String time;
     private String route;
@@ -79,6 +80,7 @@ public class SelectBusFragment extends Fragment {
         // Get data from arguments
         Bundle args = getArguments();
         if (args != null) {
+            routeid = args.getString("routeid", "");
             date = args.getString("date", "");
             time = args.getString("time", "");
             route = args.getString("route", "");
@@ -171,6 +173,7 @@ public class SelectBusFragment extends Fragment {
 
                 // Pass ticket data as arguments
                 Bundle args = new Bundle();
+                args.putString("routeid", routeid);
                 args.putString("date", date);
                 args.putString("time", time);
                 args.putString("route", route);

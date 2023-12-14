@@ -4,14 +4,6 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        getByName("debug") {
-            storeFile = file("C:\\Android Studio APK\\keystore.jks")
-            storePassword = "nascar09"
-            keyAlias = "key0"
-            keyPassword = "nascar09"
-        }
-    }
     namespace = "com.uasmobilev1"
     compileSdk = 34
 
@@ -32,7 +24,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            signingConfig = signingConfigs.getByName("debug")
         }
     }
 
@@ -62,4 +53,6 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation ("com.firebaseui:firebase-ui-auth:7.2.0")
     implementation ("com.facebook.android:facebook-android-sdk:latest.release")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation("androidx.core:core-splashscreen:1.0.0")
 }

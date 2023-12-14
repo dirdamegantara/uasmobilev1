@@ -33,54 +33,55 @@ public class HomeFragment extends Fragment {
         palman1Card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSelectBusFragment("Senin, 01/01/2024", "09:00 AM", "Rp400.000", "HARVEST", "Rute Palu - Manado");
+                openSelectBusFragment("palman1","Senin, 01/01/2024", "09:00 AM", "Rp400.000", "HARVEST", "Rute Palu - Manado");
             }
         });
 
         palman2Card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSelectBusFragment("Selasa, 02/01/2024", "09:00 AM", "Rp375.000", "DAMRI", "Rute Palu - Manado");
+                openSelectBusFragment("palman2","Selasa, 02/01/2024", "09:00 AM", "Rp375.000", "DAMRI", "Rute Palu - Manado");
             }
         });
 
         palman3Card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSelectBusFragment("Rabu, 03/01/2024", "09:00 AM", "Rp400.000", "HARVEST", "Rute Palu - Manado");
+                openSelectBusFragment("palman3","Rabu, 03/01/2024", "09:00 AM", "Rp400.000", "HARVEST", "Rute Palu - Manado");
             }
         });
 
         palmak1Card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSelectBusFragment("Senin, 01/01/2024", "07:00 AM", "Rp370.000", "DAMRI", "Rute Palu - Makassar");
+                openSelectBusFragment("palmak1","Senin, 01/01/2024", "07:00 AM", "Rp370.000", "DAMRI", "Rute Palu - Makassar");
             }
         });
 
         palmak2Card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSelectBusFragment("Selasa, 02/01/2024", "09:00 AM", "Rp350.000", "NEO TRANS", "Rute Palu - Makassar");
+                openSelectBusFragment("palmak2","Selasa, 02/01/2024", "09:00 AM", "Rp350.000", "NEO TRANS", "Rute Palu - Makassar");
             }
         });
 
         palmak3Card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSelectBusFragment("Rabu, 03/01/2024", "09:00 AM", "Rp385.000", "HARVEST", "Rute Palu - Makassar");
+                openSelectBusFragment("palmak3", "Rabu, 03/01/2024", "09:00 AM", "Rp385.000", "HARVEST", "Rute Palu - Makassar");
             }
         });
 
         return view;
     }
 
-    private void openSelectBusFragment(String date, String time, String price, String busInfo, String route) {
+    private void openSelectBusFragment(String routeid, String date, String time, String price, String busInfo, String route) {
         // Create an instance of the SelectBusFragment
         SelectBusFragment selectBusFragment = new SelectBusFragment();
 
         // Pass data as arguments to the fragment
         Bundle args = new Bundle();
+        args.putString("routeid", routeid);
         args.putString("date", date);
         args.putString("time", time);
         args.putString("price", price);
